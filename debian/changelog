@@ -1,0 +1,209 @@
+ruby-zip (2.0.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add patch to fix test failure in s390x architecture
+  * Declare compliance with Debian Policy 4.5.0
+  * Do not runtime depend on ruby interpreter
+
+ -- Lucas Kanashiro <lucas.kanashiro@canonical.com>  Wed, 25 Mar 2020 15:10:26 -0300
+
+ruby-zip (2.0.0-1) unstable; urgency=medium
+
+  [ David Suárez ]
+  * New Upstream version (Closes: #941222).
+  * d/control:
+    - Update Standards version; (no changes needed).
+    - Bump debhelper from 9 to 12.
+    - Add myself as uploader.
+    - Wrap and sort.
+    - Add 'Rules-Requires-Root' field.
+    - Change architecture to arch-all.
+  * d/watch: fix package rename.
+  * d/copyright:
+    - Update debian related files years.
+    - Update format URL to secure protocol.
+  * Add upstream data.
+  * Clean trailing whitespace.
+  * d/patches:
+    - Drop 'fix-random-tests-failures'; Applied upstream.
+    - Drop 'ignore-simplecov.diff'; Seems to work now.
+  * Drop d/source/include-binaries; Is unused.
+
+ -- David Suárez <david.sephirot@gmail.com>  Sat, 09 Nov 2019 00:32:04 +0100
+
+ruby-zip (1.2.2-2) UNRELEASED; urgency=medium
+
+  * Add salsa-ci.yml
+
+ -- Utkarsh Gupta <guptautkarsh2102@gmail.com>  Tue, 13 Aug 2019 08:21:37 +0530
+
+ruby-zip (1.2.2-1) unstable; urgency=medium
+
+  [ Manas Kashyap ]
+  * New Upstream Release
+  * Standard version updated
+  * Debhelper Bumped
+  * VCS updated
+
+  [ Pirate Praveen ]
+  * Refresh patches and remove patches applied upstream
+  * Bump Standards-Version to 4.3.0 (no changes needed)
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 29 Dec 2018 16:54:58 +0530
+
+ruby-zip (1.2.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix CVE-2018-1000544:
+    rubyzip gem rubyzip version 1.2.1 and earlier contains a Directory
+    Traversal vulnerability that can be exploited to write arbitrary files to
+    the filesystem. (Closes: #902720)
+  * Drop CVE-2017-5946.patch because this one was already fixed in version
+    1.2.1.
+
+ -- Markus Koschany <apo@debian.org>  Mon, 13 Aug 2018 13:57:54 +0200
+
+ruby-zip (1.2.1-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+
+ -- Sruthi Chandran <srud@disroot.org>  Tue, 27 Jun 2017 23:48:00 +0530
+
+ruby-zip (1.2.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * CVE-2017-5946: directory traversal vulnerability in Zip::File component
+    (Closes: #856269)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 27 Feb 2017 17:38:59 +0100
+
+ruby-zip (1.2.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+
+  [ Balasankar C ]
+  * Add patch: require-forwardable-fix-test.patch (fix test failures)
+
+  [ Pirate Praveen ]
+  * Add myself to uploaders
+
+ -- Sruthi Chandran <srud@disroot.org>  Fri, 26 Aug 2016 20:13:33 +0530
+
+ruby-zip (1.1.7-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Refresh patch, remove already applied hunks.
+  * Bump standards version to 3.9.6 (no changes).
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 29 Aug 2015 10:06:18 +0530
+
+ruby-zip (1.1.6-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ David Suárez ]
+  * New upstream release.
+  * Drop 'dont-use-home' patch; Fixed upstream.
+  * Add 'fix-random-tests-failures' patch from upstream.
+    Fixes FTBFS on some archs.
+  * debian/copyright: Fix Ruby license short name.
+  * debian/rules: add tests generated file to clean.
+  * Drop 'libzip-ruby1.9.1' transitional package.
+
+  [ Antonio Terceiro ]
+  * debian/rules: export LANG=C.UTF-8 since the test suite assumes a UTF-8
+    locale
+  * debian/control add `Testsuite: autopkgtest-pkg-perl`
+
+ -- David Suárez <david.sephirot@gmail.com>  Tue, 23 Sep 2014 20:22:47 +0200
+
+ruby-zip (1.1.2-2) unstable; urgency=medium
+
+  * debian/patches/dont-use-home.patch: don't use home directory while in
+    tests. Fixes FTBFS pretty much everywhere.
+
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 05 Sep 2014 15:38:51 -0300
+
+ruby-zip (1.1.2-1) unstable; urgency=medium
+
+  * Team upload; package being reintroduced after removal (Closes: #738745).
+  * New upstream release.
+
+  [ David Suárez ]
+  * New upstream release
+  * Switch package to gem2deb helper (Closes: #722367 #647073)
+    - Build against supported runtimes (Closes: #730962)
+    - debian/control: Add Vcs-* header
+    - debian/compat: bump to version7
+  * Remove old 1.8 package and add 1.9 transitional one
+  * Add working watch file
+  * debian/control: update homepage url
+  * Update standards version; no changes needed
+  * Update copyright file
+  * Move package to Debian Ruby Extras team
+
+ -- David Suárez <david.sephirot@gmail.com>  Sun, 29 Dec 2013 19:30:30 +0100
+
+libzip-ruby (0.9.4-1) unstable; urgency=medium
+
+  * New upstream release
+  * Add ruby 1.9.1 support
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Wed, 24 Feb 2010 17:45:27 +0900
+
+libzip-ruby (0.9.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Tue, 25 Jul 2006 04:49:39 +0900
+
+libzip-ruby (0.5.12-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Sun, 30 Oct 2005 05:07:30 +0900
+
+libzip-ruby (0.5.6-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Sun, 19 Dec 2004 01:28:05 +0900
+
+libzip-ruby (0.5.5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Wed, 31 Mar 2004 16:19:19 +0900
+
+libzip-ruby (0.5.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Thu, 11 Mar 2004 22:10:05 +0900
+
+libzip-ruby (0.5.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Sat, 21 Feb 2004 17:15:56 +0900
+
+libzip-ruby (0.5.1-3) unstable; urgency=low
+
+  * fixed: commit will break files.
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Fri, 16 Jan 2004 08:20:51 +0900
+
+libzip-ruby (0.5.1-2) unstable; urgency=low
+
+  * fixed; install dir.
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Sun, 19 Oct 2003 08:13:51 +0900
+
+libzip-ruby (0.5.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Tatsuki Sugiura <sugi@nemui.org>  Tue, 16 Sep 2003 02:31:19 +0900

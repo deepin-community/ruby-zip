@@ -1,0 +1,16 @@
+Description: Explicitly require forwardable to fix test failure
+Author: Balasankar C <balasankarc@autistici.org>
+Last-Update: 2016-09-09
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/test/test_helper.rb
++++ b/test/test_helper.rb
+@@ -5,6 +5,8 @@
+ require 'digest/sha1'
+ require 'zip'
+ require 'gentestfiles'
++require 'forwardable'
++require 'pathname'
+ 
+ TestFiles.create_test_files
+ TestZipFile.create_test_zips

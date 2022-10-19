@@ -1,0 +1,29 @@
+From: Lucas Kanashiro <lucas.kanashiro@canonical.com>
+Date: Wed, 25 Mar 2020 12:43:21 -0300
+Subject: Fix test failure in s390x due to array pack directives
+
+A test fails in s390x because of the current pack directives, changing
+it to 'V3' fixes the problem in s390x and does not add a regression to
+amd64 at least.
+
+This patch was forwarded upstream and you can find more info here:
+https://github.com/rubyzip/rubyzip/pull/445
+---
+ test/file_extract_test.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/test/file_extract_test.rb b/test/file_extract_test.rb
+index 6103aea..ca25dbc 100644
+--- a/test/file_extract_test.rb
++++ b/test/file_extract_test.rb
+@@ -110,8 +110,8 @@ class ZipFileExtractTest < MiniTest::Test
+         assert_equal true_size, a_entry.size
+       end
+ 
+-      true_size_bytes = [compressed_size, true_size, file_name.size].pack('LLS')
+-      fake_size_bytes = [compressed_size, fake_size, file_name.size].pack('LLS')
++      true_size_bytes = [compressed_size, true_size, file_name.size].pack('V3')
++      fake_size_bytes = [compressed_size, fake_size, file_name.size].pack('V3')
+ 
+       data = File.binread(real_zip)
+       assert data.include?(true_size_bytes)
